@@ -15,7 +15,7 @@ zendesk = config("ZENDESK_DOMAIN")
 language = config("ZENDESK_LANGUAGE")
 
 date = datetime.date.today()
-backup_path = os.path.join(str(date), language)
+backup_path = os.path.join('backups', str(date), language)
 if not os.path.exists(backup_path):
     os.makedirs(backup_path)
 
