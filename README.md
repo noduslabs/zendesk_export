@@ -16,6 +16,11 @@ Several options are available:
    
 `make_backup_with_images_categories.py`
 
+4. Backup all your Zendesk knowledge base articles in the markdown (MD) format, separated by categories
+
+`make_backup_with_images_categories_md.py`
+
+
 ## To Run
 
 1. Clone the repo
@@ -23,4 +28,18 @@ Several options are available:
 3. Rename the `.env.sample` file to `.env` 
 4. Add your Zendesk credentials to the `.env` file
 5. Launch the script (e.g. `python3 make_backup_with_images_categories.py`)
+
+## Advanced Help
+
+To install the dependencies listed in the `requirements.txt` file:
+
+```
+pip3 install -r requirements.txt
+```
+
+For listing all the dependencies in the `requirements.txt` file:
+
+```
+pipreqs --force
+```
 
