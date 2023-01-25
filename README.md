@@ -2,13 +2,19 @@
 
 Using this python script, you can export your Zendesk knowledge base.
 
-Several options are available:
+You can later use software like [InfraNodus](https://infranodus.com) to analyze this knowledge base and to find the main topics inside, see how the different pages are connected, etc.
 
-1. Backup all the articles
+All the data gets saved into `/backups/` folder with today's date, e.g. `/backups/2022-08-08`
+
+Inside this folder you have different folders depending on the type of export option you chose below.
+
+Several export options are available:
+
+1. Backup all the articles as html
 
 `make_backup_articles_only.py`
 
-2. Backup all the articles with the images used in them
+2. Backup all the articles with the images used in them as html
    
 `make_backup_with_images.py`
 
@@ -19,6 +25,10 @@ Several options are available:
 4. Backup all your Zendesk knowledge base articles in the markdown (MD) format, separated by categories
 
 `make_backup_with_images_categories_md.py`
+
+5. Backup all your Zendesk knowledge base articles in the markdown (MD) format, saved into one folder (good for later analysis with [InfraNodus](https://infranodus.com))
+
+`make_backup_md.py`
 
 
 ## To Run
