@@ -29,21 +29,24 @@ if not os.path.exists(backup_path):
 
 log = []
 
-# get categories
+# get categories (with pagination)
+sections = {}
 category_endpoint = zendesk + \
-    '/api/v2/help_center/en-us/sections'.format(
+    '/api/v2/help_center/{locale}/sections.json'.format(
         locale=language.lower())
 
-category_response = session.get(category_endpoint)
-if category_response.status_code != 200:
-    print('Failed to retrieve articles with error {}'.format(
-        category_response.status_code))
-    exit()
-category_data = category_response.json()
+while category_endpoint:
+    category_response = session.get(category_endpoint)
+    if category_response.status_code != 200:
+        print('Failed to retrieve sections with error {}'.format(
+            category_response.status_code))
+        exit()
+    category_data = category_response.json()
 
-sections = {}
-for section in category_data['sections']:
-    sections[section['id']] = section['name']
+    for section in category_data['sections']:
+        sections[section['id']] = section['name']
+    
+    category_endpoint = category_data.get('next_page')
 
 
 # get the articles
