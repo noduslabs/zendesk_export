@@ -8,6 +8,16 @@ All the data gets saved into `/backups/` folder with today's date, e.g. `/backup
 
 Inside this folder you have different folders depending on the type of export option you chose below.
 
+## To Run
+
+1. Clone the repo
+2. Install dependencies listed in `requirements.txt`
+3. Rename the `.env.sample` file to `.env`
+4. Add your Zendesk credentials to the `.env` file
+5. Launch the script (e.g. `python3 make_backup_with_images_categories.py`)
+
+## Export Options Available
+
 Several export options are available:
 
 1. Backup all the articles as html
@@ -15,11 +25,11 @@ Several export options are available:
 `make_backup_articles_only.py`
 
 2. Backup all the articles with the images used in them as html
-   
+
 `make_backup_with_images.py`
 
 3. Backup all the articles with the images used in them, separate by folders that reflect the sections used in your Zendesk
-   
+
 `make_backup_with_images_categories.py`
 
 4. Backup all your Zendesk knowledge base articles in the markdown (MD) format, separated by categories
@@ -29,15 +39,6 @@ Several export options are available:
 5. Backup all your Zendesk knowledge base articles in the markdown (MD) format, saved into one folder (good for later analysis with [InfraNodus](https://infranodus.com))
 
 `make_backup_md.py`
-
-
-## To Run
-
-1. Clone the repo
-2. Install dependencies listed in `requirements.txt`
-3. Rename the `.env.sample` file to `.env` 
-4. Add your Zendesk credentials to the `.env` file
-5. Launch the script (e.g. `python3 make_backup_with_images_categories.py`)
 
 ## Advanced Help
 
